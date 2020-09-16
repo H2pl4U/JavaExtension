@@ -1,0 +1,13 @@
+*.zip
+*.log
+/.git
+/.idea
+.gitignore/
+target/
+log/
+logs/
+.idea/
+/files/
+*.error
+*.iml
+!src/main/java/cn/shmedo/interceptors/log
