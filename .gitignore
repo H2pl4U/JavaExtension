@@ -1,0 +1,12 @@
+*.zip
+*.log
+/.git
+/.idea
+.gitignore/
+target/
+log/
+logs/
+.idea/
+/files/
+*.error
+*.iml
