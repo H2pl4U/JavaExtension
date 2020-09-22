@@ -8,11 +8,12 @@ import java.util.concurrent.locks.ReentrantLock;
  * Condition接口提供了类似Object的wait、notify和notifyAll方法，
  * 与Lock配合可以实现生产/消费模式，但是这两者在使用方式以及功能特性上还是有差别的
  * 使用Condition实现一个生产消费的例子
+ * 注：Condition必须配合Lock使用，否则程序将抛出IllegalMonitorStateException异常
  * Created by Liuwei on 2020/9/21 18:25
  */
 public class ConditionDemo {
-    private static ReentrantLock lock = new ReentrantLock();
-    private static Condition condition = lock.newCondition();
+    private final static ReentrantLock lock = new ReentrantLock();
+    private final static Condition condition = lock.newCondition();
     //初始数据
     private static int data = 0;
     //是否被消费
