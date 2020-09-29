@@ -8,7 +8,8 @@ package com.h2pl4u.designpattern;
  * 简单来说就是，相同的过程可以创建不同的产品。
  * 适用于：
  * 一个对象有非常复杂的内部结构（很多属性）
- * 想将复杂对象的创建和使用分离。
+ * 想将复
+ * 杂对象的创建和使用分离。
  * 优点：
  * 封装性好，创建和使用分离
  * 拓展性好，建造类之间独立，一定程度上解耦。
@@ -67,7 +68,7 @@ public class Builder {
     public static void main(String[] args) {
         Shop shop = new Shop.ShopBuilder()
                 .name("鲜果园")
-                .location("上海浦江镇")
+                .location("上海闵行区")
                 .type("水果店")
                 .build();
         System.out.println(shop.toString());
