@@ -65,6 +65,93 @@ public class Builder {
         }
     }
 
+    static class Animal {
+        private Integer id;
+        private String name;
+        private String sex;
+        private Integer age;
+
+        public Animal(AnimalBuilder animalBuilder) {
+            this.id = animalBuilder.id;
+            this.name = animalBuilder.name;
+            this.sex = animalBuilder.sex;
+            this.age = animalBuilder.age;
+        }
+
+        public Integer getId() {
+            return id;
+        }
+
+        public void setId(Integer id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getSex() {
+            return sex;
+        }
+
+        public void setSex(String sex) {
+            this.sex = sex;
+        }
+
+        public Integer getAge() {
+            return age;
+        }
+
+        public void setAge(Integer age) {
+            this.age = age;
+        }
+
+        @Override
+        public String toString() {
+            return "Animal{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", sex='" + sex + '\'' +
+                    ", age=" + age +
+                    '}';
+        }
+
+        public static class AnimalBuilder {
+            private Integer id;
+            private String name;
+            private String sex;
+            private Integer age;
+
+            public AnimalBuilder id(Integer id) {
+                this.id = id;
+                return this;
+            }
+
+            public AnimalBuilder name(String name) {
+                this.name = name;
+                return this;
+            }
+
+            public AnimalBuilder sex(String sex) {
+                this.sex = sex;
+                return this;
+            }
+
+            public AnimalBuilder age(Integer age) {
+                this.age = age;
+                return this;
+            }
+
+            public Animal build() {
+                return new Animal(this);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Shop shop = new Shop.ShopBuilder()
                 .name("鲜果园")
@@ -72,5 +159,8 @@ public class Builder {
                 .type("水果店")
                 .build();
         System.out.println(shop.toString());
+
+        Animal animal = new Animal.AnimalBuilder().id(1).name("老虎").sex("雄").age(10).build();
+        System.out.println(animal.toString());
     }
 }

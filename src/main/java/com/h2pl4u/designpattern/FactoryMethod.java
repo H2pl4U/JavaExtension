@@ -20,11 +20,18 @@ public class FactoryMethod {
         }
     }
 
+    static class Apple extends Fruit {
+        @Override
+        void eat() {
+            System.out.println("恰🍎");
+        }
+    }
+
     static abstract class FruitFactory {
         abstract Fruit produceFruit(String name);
     }
 
-    static class AppleFruitFactory extends FruitFactory {
+    static class BananaFruitFactory extends FruitFactory {
         @Override
         Fruit produceFruit(String name) {
             if (name.equals("banana")) {
@@ -34,9 +41,22 @@ public class FactoryMethod {
         }
     }
 
+    static class AppleFruitFactory extends FruitFactory {
+        @Override
+        Fruit produceFruit(String name) {
+            if (name.equals("apple")) {
+                return new Apple();
+            }
+            return null;
+        }
+    }
+
     public static void main(String[] args) {
-        FruitFactory fruitFactory = new AppleFruitFactory();
-        Fruit banana = fruitFactory.produceFruit("banana");
-        banana.eat();   //恰🍌
+        FruitFactory appleFruitFactory = new AppleFruitFactory();
+        Fruit apple = appleFruitFactory.produceFruit("apple");
+        apple.eat();     //恰🍎
+        BananaFruitFactory bananaFruitFactory = new BananaFruitFactory();
+        Fruit banana = bananaFruitFactory.produceFruit("banana");
+        banana.eat();    //恰🍌
     }
 }

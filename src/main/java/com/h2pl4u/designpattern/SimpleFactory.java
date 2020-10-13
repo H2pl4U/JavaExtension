@@ -20,10 +20,19 @@ public class SimpleFactory {
         }
     }
 
+    static class Banana extends Fruit {
+        @Override
+        void eat() {
+            System.out.println("恰🍌");
+        }
+    }
+
     static class FruitFactory {
         public Fruit produce(String name) {
             if (name.equals("apple")) {
                 return new Apple();
+            } else if (name.equals("banana")) {
+                return new Banana();
             } else {
                 return null;
             }
@@ -34,5 +43,7 @@ public class SimpleFactory {
         FruitFactory fruitFactory = new FruitFactory();
         Fruit apple = fruitFactory.produce("apple");
         apple.eat();    //恰🍎
+        Fruit banana = fruitFactory.produce("banana");
+        banana.eat();   //恰🍌
     }
 }
