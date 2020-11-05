@@ -20,15 +20,17 @@ package com.h2pl4u.designpattern;
 public class IteratorPattern {
     public interface Iterator {
         boolean hasNext();
+
         Object next();
     }
 
     public interface Container {
-        public Iterator getIterator();
+        Iterator getIterator();
     }
 
     public static class NameRepository implements Container {
         public String[] names = {"Robert", "John", "Julie", "Lora"};
+
         @Override
         public Iterator getIterator() {
             return new NameIterator();
@@ -36,6 +38,7 @@ public class IteratorPattern {
 
         private class NameIterator implements Iterator {
             int index;
+
             @Override
             public boolean hasNext() {
                 if (index < names.length) {
@@ -56,7 +59,7 @@ public class IteratorPattern {
 
     public static void main(String[] args) {
         NameRepository nameRepository = new NameRepository();
-        for (Iterator iterator = nameRepository.getIterator(); iterator.hasNext();) {
+        for (Iterator iterator = nameRepository.getIterator(); iterator.hasNext(); ) {
             String name = (String) iterator.next();
             System.out.println("Name:" + name);
         }
