@@ -44,13 +44,13 @@ public class CompositeDemo2 {
     }
 
     public static void main(String[] args) {
-        Employee CEO = new Employee("Liuwei","CEO", 100000);
+        Employee CEO = new Employee("Liuwei", "CEO", 100000);
         Employee CTO = new Employee("fyh", "CTO", 60000);
         Employee CFO = new Employee("gf", "CFO", 50000);
-        Employee clerk1 = new Employee("jjh","Marketing", 10000);
-        Employee clerk2 = new Employee("zh","Marketing", 10000);
-        Employee salesExecutive1 = new Employee("bjb","Sales", 10000);
-        Employee salesExecutive2 = new Employee("hhl","Sales", 10000);
+        Employee clerk1 = new Employee("jjh", "Marketing", 10000);
+        Employee clerk2 = new Employee("zh", "Marketing", 10000);
+        Employee salesExecutive1 = new Employee("bjb", "Sales", 10000);
+        Employee salesExecutive2 = new Employee("hhl", "Sales", 10000);
         CEO.add(CTO);
         CEO.add(CFO);
         CFO.add(clerk1);

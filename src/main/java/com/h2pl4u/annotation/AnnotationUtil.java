@@ -64,9 +64,9 @@ public class AnnotationUtil {
                         type = "NUMBER";
                     } else if (String.class.isAssignableFrom(field.getType())) {
                         type = "VARCHAR2";
-                    } else if (Date.class.isAssignableFrom(field.getType())){
+                    } else if (Date.class.isAssignableFrom(field.getType())) {
                         type = "DATE";
-                    }else {
+                    } else {
                         throw new RuntimeException("unspported type=" + field.getType().getSimpleName());
                     }
                     columns.add(new ColumnBean(type, name, length, defaultValue));
@@ -77,7 +77,6 @@ public class AnnotationUtil {
     }
 
     /**
-     *
      * 用于描述Column
      */
     private static class ColumnBean {
@@ -96,6 +95,7 @@ public class AnnotationUtil {
 
     /**
      * 生成SQL
+     *
      * @param bean
      * @return
      */
@@ -115,13 +115,13 @@ public class AnnotationUtil {
                 createTableSql.append(" ");
                 createTableSql.append(column.type);
                 int length = column.length;
-                if(length != 0){
+                if (length != 0) {
                     createTableSql.append("(");
                     createTableSql.append(column.length);
                     createTableSql.append(")");
                 }
                 String defaultValue = column.defaultValue;
-                if(defaultValue != null && defaultValue.length() != 0){
+                if (defaultValue != null && defaultValue.length() != 0) {
                     createTableSql.append(" default ");
                     createTableSql.append(defaultValue);
                 }
@@ -131,7 +131,7 @@ public class AnnotationUtil {
             }
             createTableSql.append(")");
             return createTableSql.toString();
-        }else {
+        } else {
             throw new RuntimeException("table's name is null");
         }
     }

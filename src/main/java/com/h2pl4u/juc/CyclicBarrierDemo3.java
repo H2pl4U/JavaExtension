@@ -124,9 +124,10 @@ public class CyclicBarrierDemo3 {
      * 从上面的三个例子中可以看到，无论是哪种情况导致屏障破坏，屏障点后面的代码都没有被执行，main方法也没有退出
      * 和CountDownLatch区别
      * 1.CountDownLatch：一个线程(或者多个)，等待另外N个线程完成某个事情之后才能执行；
-     *   CyclicBarrier：N个线程相互等待，任何一个线程完成之前，所有的线程都必须等待。
+     * CyclicBarrier：N个线程相互等待，任何一个线程完成之前，所有的线程都必须等待。
      * 2.CountDownLatch：一次性的；
-     *   CyclicBarrier：可以重复使用。
+     * CyclicBarrier：可以重复使用。
+     *
      * @param args
      * @throws InterruptedException
      */

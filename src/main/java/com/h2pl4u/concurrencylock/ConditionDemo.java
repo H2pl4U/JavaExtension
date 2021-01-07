@@ -24,6 +24,7 @@ public class ConditionDemo {
      * 如果没有被消费，则调用Condition的await方法进入等待，直到Condition对象的signal
      * 方法被调用；consumeData方法逻辑和produceData一致。
      * Condition核心用法就是通过await方法让线程进入阻塞等待状态，通过signal解除阻塞状态。
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -36,7 +37,7 @@ public class ConditionDemo {
             while (true) {
                 consumeData();
             }
-        },"consumer").start();
+        }, "consumer").start();
     }
 
     private static void consumeData() {

@@ -78,7 +78,7 @@ public class Singleton {
 
     /**
      * 静态内部类单例模式
-     *JVM在类的初始化阶段会加Class对象初始化同步锁，同步多个线程对该类的初始化操作；
+     * JVM在类的初始化阶段会加Class对象初始化同步锁，同步多个线程对该类的初始化操作；
      * 静态内部类InnerClass的静态成员变量instance在方法区中只会有一个实例。
      * 在Java规范中，当以下这些情况首次发生时，A类将会立刻被初始化：
      * 1.A类型实例被创建；
@@ -108,9 +108,11 @@ public class Singleton {
      */
     static class HungrySingleton {
         private final static HungrySingleton hungrySingleton = new HungrySingleton();
+
         private HungrySingleton() {
 
         }
+
         public HungrySingleton getInstance() {
             return hungrySingleton;
         }
@@ -139,6 +141,7 @@ public class Singleton {
     /**
      * Java禁止通过反射创建枚举对象。
      * 正是因为枚举类型拥有这些天然的优势，所以用它创建单例是不错的选择，这也是Effective Java推荐的方式
+     *
      * @param args
      * @throws Exception
      */

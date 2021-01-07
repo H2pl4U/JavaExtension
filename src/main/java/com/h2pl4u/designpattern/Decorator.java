@@ -17,6 +17,7 @@ package com.h2pl4u.designpattern;
 public class Decorator {
     static abstract class AbstractFruitSalad {
         public abstract String remark();
+
         public abstract int price();
     }
 
@@ -86,6 +87,7 @@ public class Decorator {
 
     /**
      * 通过不同的装饰器自由组合，我们可以灵活的组装出各式各样的水果沙拉，这正是装饰者模式的优点，但明显可以看出代码变复杂了。
+     *
      * @param args
      */
     public static void main(String[] args) {

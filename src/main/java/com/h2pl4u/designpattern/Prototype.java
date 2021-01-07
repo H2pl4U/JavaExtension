@@ -108,11 +108,11 @@ public class Prototype {
         ArrayList<Teacher> list2 = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             Student s = (Student) student.clone();
-            s.setAge(20+i);
-            s.setName("学生"+i);
+            s.setAge(20 + i);
+            s.setName("学生" + i);
             Teacher t = (Teacher) teacher.clone();
-            t.setAge(30+i);
-            t.setName("老师"+i);
+            t.setAge(30 + i);
+            t.setName("老师" + i);
             t.setBirthDay(new Date());
             list1.add(s);
             list2.add(t);

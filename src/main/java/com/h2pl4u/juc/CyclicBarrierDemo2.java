@@ -24,7 +24,7 @@ public class CyclicBarrierDemo2 {
             } catch (BrokenBarrierException e) {
                 e.printStackTrace();
             }
-        },"t1").start();
+        }, "t1").start();
         new Thread(() -> {
             try {
                 barrier.await(1, TimeUnit.SECONDS);
@@ -36,6 +36,6 @@ public class CyclicBarrierDemo2 {
             } catch (TimeoutException e) {
                 e.printStackTrace();
             }
-        },"t2").start();
+        }, "t2").start();
     }
 }

@@ -17,7 +17,7 @@ import java.util.stream.IntStream;
  * -关注内/外部状态，关注线程安全问题；
  * -程序的逻辑复杂化。
  * 内部状态：简单理解为享元对象的属性状态，不会因为外部的改变而改变； 外部状态：简单理解为方法参数。
- *
+ * <p>
  * Created by Liuwei on 2020/9/29 16:46
  */
 public class Flyweight {
@@ -66,10 +66,11 @@ public class Flyweight {
 
     /**
      * 从结果看，在10次循环中，只生产了4个对象，这很好的描述了系统有大量相似对象，需要缓冲池的场景
+     *
      * @param args
      */
     public static void main(String[] args) {
-        IntStream.range(0,10).forEach(i -> {
+        IntStream.range(0, 10).forEach(i -> {
             String name = PIE[(int) (Math.random() * PIE.length)];
             FruitPie fruitPie = FruitPieFactory.produce(name);
             fruitPie.setTime(LocalDateTime.now());

@@ -22,7 +22,7 @@ public class ReentrantLockDemo2 {
      * @param args
      */
     public static void main(String[] args) {
-        IntStream.rangeClosed(0,1).forEach(i->new Thread(ReentrantLockDemo2::method1, String.valueOf(i)).start());
+        IntStream.rangeClosed(0, 1).forEach(i -> new Thread(ReentrantLockDemo2::method1, String.valueOf(i)).start());
     }
 
     private static void method1() {

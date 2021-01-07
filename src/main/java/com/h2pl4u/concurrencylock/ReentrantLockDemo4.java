@@ -27,7 +27,8 @@ public class ReentrantLockDemo4 {
         try {
             lock.lockInterruptibly();
             System.out.println(Thread.currentThread().getName() + "开始工作");
-            while (true) { }
+            while (true) {
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {

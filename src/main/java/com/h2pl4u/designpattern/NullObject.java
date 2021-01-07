@@ -11,7 +11,9 @@ package com.h2pl4u.designpattern;
 public class NullObject {
     public static abstract class AbstractCustomer {
         protected String name;
+
         public abstract boolean isNil();
+
         public abstract String getName();
     }
 

@@ -26,7 +26,7 @@ public class ConditionLoopDemo {
                 condition1.await();
             }
             System.out.println(Thread.currentThread().getName() + " print a");
-            value="b";
+            value = "b";
             condition2.signal();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -34,6 +34,7 @@ public class ConditionLoopDemo {
             lock.unlock();
         }
     }
+
     public void printB() {
         try {
             lock.lock();
@@ -41,7 +42,7 @@ public class ConditionLoopDemo {
                 condition2.await();
             }
             System.out.println(Thread.currentThread().getName() + " print b");
-            value="c";
+            value = "c";
             condition3.signal();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -49,6 +50,7 @@ public class ConditionLoopDemo {
             lock.unlock();
         }
     }
+
     public void printC() {
         try {
             lock.lock();
@@ -56,7 +58,7 @@ public class ConditionLoopDemo {
                 condition3.await();
             }
             System.out.println(Thread.currentThread().getName() + " print c");
-            value="a";
+            value = "a";
             condition1.signal();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -67,8 +69,8 @@ public class ConditionLoopDemo {
 
     public static void main(String[] args) {
         ConditionLoopDemo loop = new ConditionLoopDemo();
-        IntStream.rangeClosed(0,2).forEach(i-> new Thread(loop::printA, "线程A").start());
-        IntStream.rangeClosed(0,2).forEach(i-> new Thread(loop::printB, "线程B").start());
-        IntStream.rangeClosed(0,2).forEach(i-> new Thread(loop::printC, "线程C").start());
+        IntStream.rangeClosed(0, 2).forEach(i -> new Thread(loop::printA, "线程A").start());
+        IntStream.rangeClosed(0, 2).forEach(i -> new Thread(loop::printB, "线程B").start());
+        IntStream.rangeClosed(0, 2).forEach(i -> new Thread(loop::printC, "线程C").start());
     }
 }

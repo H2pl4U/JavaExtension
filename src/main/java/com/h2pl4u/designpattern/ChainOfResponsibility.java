@@ -54,6 +54,7 @@ public class ChainOfResponsibility {
 
     /**
      * 套路和StringLengthValidator一样。接着创建一个客户端类，演示下如何让校验类形成一个链条
+     *
      * @param args
      */
     public static void main(String[] args) {

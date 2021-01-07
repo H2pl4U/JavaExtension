@@ -12,7 +12,7 @@ import java.util.Observable;
  * 缺点：
  * -观察者之间有过多的细节依赖，提高时间消耗及程序复杂度；
  * -应避免循环调用。
- *
+ * <p>
  * JDK对观察者模式提供了支持。
  * Created by Liuwei on 2020/9/30 15:14
  */
@@ -88,6 +88,7 @@ public class Observer {
      * 观察者对象需要实现JDK的Observer类，重写update方法。
      * 当被观察者对象调用了notifyObservers方法后，相应的观察者的update方法会被调用。
      * 值得注意的是，观察者的update方法里的逻辑最好进行异步化，这样在并发环境下可以提升程序性能。
+     *
      * @param args
      */
     public static void main(String[] args) {

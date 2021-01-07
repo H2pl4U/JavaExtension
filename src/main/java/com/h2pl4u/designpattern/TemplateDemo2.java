@@ -6,7 +6,9 @@ package com.h2pl4u.designpattern;
 public class TemplateDemo2 {
     public static abstract class Game {
         abstract void initialize();
+
         abstract void startPlay();
+
         abstract void endPlay();
 
         //模板方法

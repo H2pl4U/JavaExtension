@@ -12,8 +12,9 @@ import java.util.Date;
  * Created by Liuwei on 2020/9/15 14:23
  */
 public class SimpleJob implements Job {
+    @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
-        JobDataMap map=context.getMergedJobDataMap();
+        JobDataMap map = context.getMergedJobDataMap();
         System.out.println("username: " + map.get("username") +
                 " Triggered time is: " + new SimpleDateFormat("HH:mm:ss").format((new Date())));
     }

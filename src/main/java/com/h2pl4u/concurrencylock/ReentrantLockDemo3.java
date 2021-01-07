@@ -26,7 +26,8 @@ public class ReentrantLockDemo3 {
         try {
             lock.lock();    //不可被打断
             System.out.println(Thread.currentThread().getName() + "开始工作");
-            while (true) {}
+            while (true) {
+            }
         } finally {
             lock.unlock();
         }

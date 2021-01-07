@@ -19,6 +19,7 @@ public class SemaphoreDemo {
      * Semaphore还有一个tryAcquire，它允许线程尝试去获取1个许可证，如果许可证不足没有获取到的话，
      * 线程也会继续执行，而非阻塞等待。tryAcquire方法的重载方法
      * tryAcquire(long timeout, TimeUnit unit)可以指定尝试获取许可证的超时时间
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -38,7 +39,7 @@ public class SemaphoreDemo {
                     semaphore.release();
                 }
                 System.out.println(Thread.currentThread().getName() + "结束");
-            },"t" + (i + 1)).start();
+            }, "t" + (i + 1)).start();
         });
     }
 }

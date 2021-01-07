@@ -33,6 +33,7 @@ public class AbstractFactory {
 
     static abstract class FruitFactory {
         abstract Price getPrice();
+
         abstract Fruit getFruit();
     }
 

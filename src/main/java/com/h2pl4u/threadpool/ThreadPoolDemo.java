@@ -17,11 +17,11 @@ public class ThreadPoolDemo {
                 Thread::new, new ThreadPoolExecutor.AbortPolicy());
         System.out.println("线程池创建完毕");
         //通过execute方法向线程池提交1个任务
-        threadPoolExecutor.execute(()-> sleep(100)); //队列线程个数 0
+        threadPoolExecutor.execute(() -> sleep(100)); //队列线程个数 0
         //通过execute方法向线程池提交2个任务
-        threadPoolExecutor.execute(()-> sleep(5)); //队列线程个数 1
+        threadPoolExecutor.execute(() -> sleep(5)); //队列线程个数 1
         //通过execute方法向线程池提交3个任务
-        threadPoolExecutor.execute(()-> sleep(5)); //队列线程个数 1
+        threadPoolExecutor.execute(() -> sleep(5)); //队列线程个数 1
         //通过execute方法向线程池提交4个任务  设置的拒绝策略为AbortPolicy，所以最后提交的那个任务直接被拒绝了
 //        threadPoolExecutor.execute(()-> sleep(5)); //RejectedExecutionException
 
@@ -29,7 +29,7 @@ public class ThreadPoolDemo {
         int queueSize = -1;
         while (true) {
             if (activeCount != threadPoolExecutor.getActiveCount()
-            && queueSize != threadPoolExecutor.getQueue().size()) {
+                    && queueSize != threadPoolExecutor.getQueue().size()) {
                 System.out.println("活跃线程个数 " + threadPoolExecutor.getActiveCount());
                 System.out.println("核心线程个数 " + threadPoolExecutor.getCorePoolSize());
                 System.out.println("队列线程个数 " + threadPoolExecutor.getQueue().size());

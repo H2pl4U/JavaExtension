@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * CallerRunsPolicy策略：由调用线程处理该任务
- *
+ * <p>
  * AbortPolicy策略：丢弃任务，并抛出RejectedExecutionException异常。前面的例子就是使用该策略，所以不再演示。
  * Created by Liuwei on 2020/9/27 9:58
  */

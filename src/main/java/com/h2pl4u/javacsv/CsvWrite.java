@@ -13,7 +13,7 @@ public class CsvWrite {
         try {
             CsvWriter csvWriter = new CsvWriter(csvFilePath, ',', Charset.forName("UTF-8"));
             //表头
-            String[] csvHeaders = {"编号","姓名","年龄"};
+            String[] csvHeaders = {"编号", "姓名", "年龄"};
             csvWriter.writeRecord(csvHeaders);
             //内容
             for (int i = 0; i < 5; i++) {
