@@ -16,12 +16,12 @@ public class ThreadPoolDemo {
                 TimeUnit.SECONDS, new ArrayBlockingQueue<>(1),
                 Thread::new, new ThreadPoolExecutor.AbortPolicy());
         System.out.println("线程池创建完毕");
-        //通过execute方法向线程池提交1个任务
-        threadPoolExecutor.execute(() -> sleep(100)); //队列线程个数 0
-        //通过execute方法向线程池提交2个任务
-        threadPoolExecutor.execute(() -> sleep(5)); //队列线程个数 1
-        //通过execute方法向线程池提交3个任务
-        threadPoolExecutor.execute(() -> sleep(5)); //队列线程个数 1
+        //通过execute方法向线程池提交1个任务 队列线程个数 0
+        threadPoolExecutor.execute(() -> sleep(100));
+        //通过execute方法向线程池提交2个任务 队列线程个数 1
+        threadPoolExecutor.execute(() -> sleep(5));
+        //通过execute方法向线程池提交3个任务 队列线程个数 1
+        threadPoolExecutor.execute(() -> sleep(5));
         //通过execute方法向线程池提交4个任务  设置的拒绝策略为AbortPolicy，所以最后提交的那个任务直接被拒绝了
 //        threadPoolExecutor.execute(()-> sleep(5)); //RejectedExecutionException
 
