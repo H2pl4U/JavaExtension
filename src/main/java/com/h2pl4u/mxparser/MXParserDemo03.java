@@ -13,7 +13,7 @@ public class MXParserDemo03 {
             long timeMillis = System.currentTimeMillis();
             Function func = new Function("f(x,y) = 1341243124124333214^x + 12312313^y");
             double calculate = func.calculate(2, 4);
-            System.out.println(System.currentTimeMillis()-timeMillis);
+            System.out.println(System.currentTimeMillis() - timeMillis);
         }
     }
 }
