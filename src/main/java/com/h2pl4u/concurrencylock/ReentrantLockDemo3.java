@@ -23,8 +23,8 @@ public class ReentrantLockDemo3 {
     }
 
     private static void testLockUnInterruptibly() {
+        lock.lock();    //不可被打断
         try {
-            lock.lock();    //不可被打断
             System.out.println(Thread.currentThread().getName() + "开始工作");
             while (true) {
             }

@@ -25,8 +25,8 @@ public class ReentrantLockDemo {
 
     private static void needLock() {
         lock.lock();
-        System.out.println(Thread.currentThread().getName() + "开始工作");
         try {
+            System.out.println(Thread.currentThread().getName() + "开始工作");
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();

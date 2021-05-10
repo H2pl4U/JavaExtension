@@ -20,8 +20,8 @@ public class ConditionLoopDemo {
     private Condition condition3 = lock.newCondition();
 
     public void printA() {
+        lock.lock();
         try {
-            lock.lock();
             while (!value.equals("a")) {
                 condition1.await();
             }
@@ -36,8 +36,8 @@ public class ConditionLoopDemo {
     }
 
     public void printB() {
+        lock.lock();
         try {
-            lock.lock();
             while (!value.equals("b")) {
                 condition2.await();
             }
@@ -52,8 +52,8 @@ public class ConditionLoopDemo {
     }
 
     public void printC() {
+        lock.lock();
         try {
-            lock.lock();
             while (!value.equals("c")) {
                 condition3.await();
             }

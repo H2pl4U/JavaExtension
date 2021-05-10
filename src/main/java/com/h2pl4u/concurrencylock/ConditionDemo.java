@@ -41,8 +41,8 @@ public class ConditionDemo {
     }
 
     private static void consumeData() {
+        lock.lock(); //获取锁
         try {
-            lock.lock(); //获取锁
             while (consumed) {
                 condition.await();
             }
@@ -58,8 +58,8 @@ public class ConditionDemo {
     }
 
     private static void produceData() {
+        lock.lock();    //获取锁
         try {
-            lock.lock();    //获取锁
             while (!consumed) { //判断数据是否被消费
                 condition.await(); //如果没有被消费则进入等待
             }
