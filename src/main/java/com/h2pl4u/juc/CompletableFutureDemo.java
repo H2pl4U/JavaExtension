@@ -21,12 +21,12 @@ public class CompletableFutureDemo {
                     e.printStackTrace();
                     return null;
                 });
-        TimeUnit.MILLISECONDS.sleep(200);
+        TimeUnit.MILLISECONDS.sleep(2000);
     }
 
     static Double getPrice() {
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
         }
         if (Math.random() < 0.3D) {
